@@ -69,7 +69,7 @@ class PeriodicTableViewController: UIViewController {
         // Removed extra spaces
         chosenElementView.isHighlighted = true  // Extra space before true
         
-        delegate?.periodicTableViewController(self, didSelectElement: ranElem) // Poorly formatted delegate call
+        delegate?.periodicTableViewController(self, didSelectElement: randomElement) // Poorly formatted delegate call
     } // Closing bracket not aligned
     // No more new additions after this point
 }
