@@ -57,7 +57,7 @@ class PeriodicTableViewController: UIViewController {
     @IBAction func chooseRandomElement(_ sender: Any) { // Space needed before opening bracket
         let randomElement = elementsContoller.elements.randomElement() // Better variable name
         
-        var chosenElementView: ElementView!
+        var chosenElementView: ElementView? // Why the force unwrapped?
         
         // e: Better variable name
         for elementView in elementViews {
