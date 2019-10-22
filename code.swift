@@ -54,27 +54,23 @@ class PeriodicTableViewController: UIViewController {
     }
     
     // This next method was added by a new member of the team. Identify the 10 formatting, naming, and logic issues below:
-    @IBAction func chooseRandomElement(_ sender: Any){
-        let ranElem = elementsContoller.elements.randomElement()
+    @IBAction func chooseRandomElement(_ sender: Any) { //spacing
+        var ranElem = elementsContoller.elements.randomElement() //this needs to be mutable.
         
-        var chosenElementView:ElementView!
+        var chosenElementView: ElementView? //spacing. needs to be optional i believe to be unwrapped safely
         
         for e in elementViews {
             if (e.element == ranElem) {
-                chosenElementView = e
-                break;
+                chosenElementView = e //am i crazy or do these need flipped? I would need to run this code tbh to find anything else this tired!
+                break //we do not use semicolons in swift to tell the compiler to go to the next line.
+                //also implement the way to unwrap the view i believe. Too tired to continue for now haha!
             }
         }
-        
-        
-        
-        
         chosenElementView.isHighlighted =  true
-        
-        delegate?.periodicTableViewController(self,
-                                        didSelectElement: ranElem)
+        delegate?.periodicTableViewController(self, didSelectElement: ranElem)
         }
     // No more new additions after this point
+    //removed major whitespace
 }
 
 extension PeriodicTableViewController: ElementViewDelegate {
