@@ -56,7 +56,7 @@ class PeriodicTableViewController: UIViewController {
     // This next method was added by a new member of the team. Identify the 10 formatting, naming, and logic issues below:
     @IBAction func chooseRandomElement(_ sender: Any){
         let ranElem = elementsContoller.elements.randomElement()
-        
+      
         var chosenElementView:ElementView!
         
         for e in elementViews {
@@ -66,14 +66,9 @@ class PeriodicTableViewController: UIViewController {
             }
         }
         
-        
-        
-        
         chosenElementView.isHighlighted =  true
-        
-        delegate?.periodicTableViewController(self,
-                                        didSelectElement: ranElem)
-        }
+        delegate?.periodicTableViewController(self, didSelectElement: ranElem)
+    }
     // No more new additions after this point
 }
 
