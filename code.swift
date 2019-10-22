@@ -66,7 +66,7 @@ class PeriodicTableViewController: UIViewController {
             }
         }
         
-        chosenElementView.isHighlighted =  true
+        chosenElementView.isHighlighted = true
         
         delegate?.periodicTableViewController(self, didSelectElement: randomElement)
         
