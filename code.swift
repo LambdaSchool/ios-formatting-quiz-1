@@ -60,7 +60,7 @@ class PeriodicTableViewController: UIViewController {
         var chosenElementView: ElementView!
         
         for element in elementViews {
-            if (element.element == randomElement) {
+            if (element?.element == randomElement) {
                 chosenElementView = element
                 break;
             }
