@@ -54,26 +54,23 @@ class PeriodicTableViewController: UIViewController {
     }
     
     // This next method was added by a new member of the team. Identify the 10 formatting, naming, and logic issues below:
-    @IBAction func chooseRandomElement(_ sender: Any){
-        let ranElem = elementsContoller.elements.randomElement()
+    @IBAction func chooseRandomElement(_ sender: Any) { // Space needed before opening bracket
+        let randomElement = elementsContoller.elements.randomElement() // Better variable name
         
-        var chosenElementView:ElementView!
+        var chosenElementView:ElementView! 
         
-        for e in elementViews {
-            if (e.element == ranElem) {
-                chosenElementView = e
+        // e: Better variable name
+        for elementView in elementViews {  
+            if (elementView.element == ranElem) {
+                chosenElementView = elementView
                 break;
             }
         }
+        // Removed extra spaces
+        chosenElementView.isHighlighted = true  // Extra space before true
         
-        
-        
-        
-        chosenElementView.isHighlighted =  true
-        
-        delegate?.periodicTableViewController(self,
-                                        didSelectElement: ranElem)
-        }
+        delegate?.periodicTableViewController(self, didSelectElement: ranElem) // Poorly formatted delegate call
+    } // Closing bracket not aligned
     // No more new additions after this point
 }
 
