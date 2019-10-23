@@ -28,7 +28,7 @@ class PeriodicTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for element in elementsContoller.elements {
+        for element in elementsController.elements {
             var elementView = ElementView(with: element)
             elementView.delegate = self
             
@@ -54,22 +54,22 @@ class PeriodicTableViewController: UIViewController {
     }
     
     // This next method was added by a new member of the team. Identify the 10 formatting, naming, and logic issues below:
-    @IBAction func chooseRandomElement(_ sender: Any){
+    @IBAction func chooseRandomElement(_ sender: Any) {
         let randomElement = elementsController.elements.randomElement()
         
-        var selectedElementView: ElementView!
+        var selectedElementView: ElementView?
         
         for elementView in elementViews {
             if (elementView.element == randomElement) {
                 selectedElementView = elementView
-                break;
+                break
             }
         }
         
         selectedElementView.isHighlighted = true
         
         delegate?.periodicTableViewController(self, didSelectElement: randomElement)
-        }
+    }
     // No more new additions after this point
 }
 
