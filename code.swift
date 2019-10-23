@@ -14,7 +14,7 @@ protocol PeriodicTableViewControllerDelegate {
 
 class PeriodicTableViewController: UIViewController {
     
-    var elementsContoller: ElementsController?
+    var elementsController: ElementsController?
     var selectedElement: Element?
     
     weak var delegate: PeriodicTableViewControllerDelegate?
@@ -28,7 +28,7 @@ class PeriodicTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for element in elementsContoller.elements {
+        for element in elementsController.elements {
             var elementView = ElementView(with: element)
             elementView.delegate = self
             
@@ -55,7 +55,7 @@ class PeriodicTableViewController: UIViewController {
     
     // This next method was added by a new member of the team. Identify the 10 formatting, naming, and logic issues below:
     @IBAction func chooseRandomElement(_ sender: Any) { // Space needed before opening bracket
-        let randomElement = elementsContoller.elements.randomElement() // Better variable name
+        let randomElement = elementsController.elements.randomElement() // Better variable name
         
         var chosenElementView: ElementView!
         
