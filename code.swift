@@ -61,9 +61,9 @@ class PeriodicTableViewController: UIViewController {
         
         // e: Better variable name
         for elementView in elementViews {
-            if (elementView.element == randomElement) {
+            if elementView.element == randomElement {  // Parens are legal but do not conform to coding standards
                 chosenElementView = elementView
-                break;
+                break // Semi-colons are legal but do not conform to coding standards
             }
         }
         // Removed extra spaces
