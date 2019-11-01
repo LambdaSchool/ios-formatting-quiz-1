@@ -54,19 +54,18 @@ class PeriodicTableViewController: UIViewController {
     }
     
     // This next method was added by a new member of the team. Identify the 10 formatting, naming, and logic issues below:
-    @IBAction func chooseRandomElement(_ sender: Any){
-        let elementViews = elementsController.elements
+    @IBAction func chooseRandomElement(_ sender: Any) {
         let randomElement = elementsController.elements.randomElement()
-        var chosenElementView:ElementView!
+        var chosenElementView: ElementView!
         
-        for e in elementViews {
-            if (e.element == randomElement) {
-                chosenElementView = e
-                break;
+        for elementView in elementViews {
+            if elementView.element == randomElement {
+                chosenElementView = elementView
+                break
             }
         }
         
-        chosenElementView.isHighlighted =  true
+        chosenElementView.isHighlighted = true
         delegate?.periodicTableViewController(self, didSelectElement: randomElement)
     }
     // No more new additions after this point
