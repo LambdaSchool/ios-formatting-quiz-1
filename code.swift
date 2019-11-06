@@ -24,10 +24,10 @@ class PeriodicTableViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var coloringModeControl: ColoringModeControl!
     @IBOutlet weak var layoutModeControl: LayoutModeControl!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         for element in elementsController.elements {
             var elementView = ElementView(with: element)
             elementView.delegate = self
@@ -54,26 +54,21 @@ class PeriodicTableViewController: UIViewController {
     }
     
     // This next method was added by a new member of the team. Identify the 10 formatting, naming, and logic issues below:
-    @IBAction func chooseRandomElement(_ sender: Any){
-        let ranElem = elementsController.elements.randomElement()
+    @IBAction func chooseRandomElement(_ sender: Any) {
+        let randomElement = elementsController.elements.randomElement()
         
-        var chosenElementView:ElementView!
+        var chosenElementView: ElementView!
         
-        for e in elementViews {
-            if (e.element == ranElem) {
-                chosenElementView = e
-                break;
+        for element in elementViews {
+            if elementViews.element == randomElement {
+                chosenElementView = elementView
+                break
             }
         }
+        chosenElementView.isHighlighted = true
         
-        
-        
-        
-        chosenElementView.isHighlighted =  true
-        
-        delegate?.periodicTableViewController(self,
-                                        didSelectElement: ranElem)
-        }
+        delegate?.periodicTableViewController(self, didSelectElement: randomElement)
+    }
     // No more new additions after this point
 }
 
